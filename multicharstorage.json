@@ -1,0 +1,298 @@
+[
+"EmotionalAppraisalAsset", 
+{
+	"root":
+		{
+			"classId": 0,
+			"Description": null,
+			"AppraisalRules":
+				{
+					"AppraisalWeight": 1,
+					"Rules": [
+						{
+							"EventName": "Event(Action-End, [x], Speak([cs], [ns], [meaning], Negative), SELF)",
+							"Conditions":
+								{
+									"Set": ["ValidDialogue([cs], [ns], [meaning], Negative) = True"]
+								},
+							"AppraisalVariables":
+								{
+									"AppraisalVariables": [
+										{
+											"Name": "Like",
+											"Value": -3,
+											"Target": "-"
+										}, 
+										{
+											"Name": "Praiseworthiness",
+											"Value": -5,
+											"Target": "-"
+										}]
+								}
+						}, 
+						{
+							"EventName": "Event(Action-End, [x], Speak([cs], [ns], [meaning], Positive), SELF)",
+							"Conditions":
+								{
+									"Set": ["ValidDialogue([cs], [ns], [meaning], Positive) = True"]
+								},
+							"AppraisalVariables":
+								{
+									"AppraisalVariables": [
+										{
+											"Name": "Praiseworthiness",
+											"Value": 4,
+											"Target": "-"
+										}, 
+										{
+											"Name": "Like",
+											"Value": 2,
+											"Target": "-"
+										}]
+								}
+						}, 
+						{
+							"EventName": "Event(Action-End, [x], Speak([cs], [ns], [meaning], Neutral), SELF)",
+							"Conditions":
+								{
+									"Set": ["ValidDialogue([cs], [ns], [meaning], Neutral) = True"]
+								},
+							"AppraisalVariables":
+								{
+									"AppraisalVariables": []
+								}
+						}, 
+						{
+							"EventName": "Event(Action-End, [x], Speak([cs], [ns], [meaning], Rude), SELF)",
+							"Conditions":
+								{
+									"Set": ["ValidDialogue([cs], [ns], [meaning], Polite) = True"]
+								},
+							"AppraisalVariables":
+								{
+									"AppraisalVariables": [
+										{
+											"Name": "Desirability",
+											"Value": -1,
+											"Target": "-"
+										}, 
+										{
+											"Name": "Praiseworthiness",
+											"Value": -2,
+											"Target": "-"
+										}]
+								}
+						}, 
+						{
+							"EventName": "Event(Action-End, [x], Speak([cs], [ns], [meaning], Polite), SELF)",
+							"Conditions":
+								{
+									"Set": ["ValidDialogue([cs], [ns], [meaning], Polite) = True"]
+								},
+							"AppraisalVariables":
+								{
+									"AppraisalVariables": [
+										{
+											"Name": "Desirability",
+											"Value": 1,
+											"Target": "-"
+										}, 
+										{
+											"Name": "Praiseworthiness",
+											"Value": 2,
+											"Target": "-"
+										}]
+								}
+						}, 
+						{
+							"EventName": "Event(Action-End, [x], Speak([cs], [ns], [meaning], Dismissive), SELF)",
+							"Conditions":
+								{
+									"Set": ["ValidDialogue([cs], [ns], [meaning], Dismissive) = True"]
+								},
+							"AppraisalVariables":
+								{
+									"AppraisalVariables": [
+										{
+											"Name": "Like",
+											"Value": -1,
+											"Target": "-"
+										}, 
+										{
+											"Name": "Praiseworthiness",
+											"Value": -1,
+											"Target": "-"
+										}]
+								}
+						}]
+				}
+		},
+	"types": [
+		{
+			"TypeId": 0,
+			"ClassName": "EmotionalAppraisal.EmotionalAppraisalAsset, EmotionalAppraisal, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null"
+		}]
+},
+"EmotionalDecisionMakingAsset", 
+{
+	"root":
+		{
+			"classId": 0,
+			"ActionTendencies": [
+				{
+					"Action": "Speak([cs], [ns], [meaning], Neutral)",
+					"Target": "[x]",
+					"Layer": "-",
+					"Conditions":
+						{
+							"Set": ["DialogueState([x]) = [cs]", "Has(Floor) = SELF", "ValidDialogue([cs], [ns], [meaning], Neutral) = True"]
+						},
+					"Priority": 1
+				}, 
+				{
+					"Action": "Speak([cs], [ns], [meaning], Negative)",
+					"Target": "[x]",
+					"Layer": "-",
+					"Conditions":
+						{
+							"Set": ["DialogueState([x]) = [cs]", "Has(Floor) = SELF", "ValidDialogue([cs], [ns], [meaning], Negative) = True", "Mood(SELF) < -3"]
+						},
+					"Priority": 1
+				}, 
+				{
+					"Action": "Speak([cs], [ns], [meaning], Positive)",
+					"Target": "[x]",
+					"Layer": "-",
+					"Conditions":
+						{
+							"Set": ["DialogueState([x]) = [cs]", "Has(Floor) = SELF", "ValidDialogue([cs], [ns], [meaning], Positive) = True", "Mood(SELF) > 2"]
+						},
+					"Priority": 1
+				}, 
+				{
+					"Action": "Speak([cs], [ns], Decision, [style])",
+					"Target": "[x]",
+					"Layer": "-",
+					"Conditions":
+						{
+							"Set": ["DialogueState([x]) = [cs]", "Has(Floor) = SELF", "ValidDialogue([cs], [ns], [meaning], [style]) = True", "SI(Anderson) >= 10"]
+						},
+					"Priority": 1
+				}, 
+				{
+					"Action": "Speak([cs], [ns], [meaning], Dismissive)",
+					"Target": "[x]",
+					"Layer": "-",
+					"Conditions":
+						{
+							"Set": ["DialogueState([x]) = [cs]", "Has(Floor) = SELF", "ValidDialogue([cs], [ns], [meaning], Dismissive) = True"]
+						},
+					"Priority": 1
+				}, 
+				{
+					"Action": "Speak([cs], [ns], [meaning], Polite)",
+					"Target": "[x]",
+					"Layer": "-",
+					"Conditions":
+						{
+							"Set": ["DialogueState([x]) = [cs]", "Has(Floor) = SELF", "ValidDialogue([cs], [ns], [meaning], Polite) = True"]
+						},
+					"Priority": 1
+				}]
+		},
+	"types": [
+		{
+			"TypeId": 0,
+			"ClassName": "EmotionalDecisionMaking.EmotionalDecisionMakingAsset, EmotionalDecisionMaking, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null"
+		}]
+},
+"SocialImportanceAsset", 
+{
+	"root":
+		{
+			"classId": 0,
+			"AttributionRules": [
+				{
+					"RuleName": "Anderson is left handed",
+					"Target": "[t]",
+					"Value": -5,
+					"Conditions":
+						{
+							"Set": ["EventId(Action-End, [t], Speak([cs], [ns], Left, [style]), SELF) = [id]"]
+						}
+				}, 
+				{
+					"RuleName": "Anderson is right handed",
+					"Target": "[t]",
+					"Value": 5,
+					"Conditions":
+						{
+							"Set": ["EventId(Action-End, [t], Speak([cs], [ns], Right, [style]), SELF) = [id]"]
+						}
+				}, 
+				{
+					"RuleName": "Anderson asked for lawyer",
+					"Target": "[t]",
+					"Value": -5,
+					"Conditions":
+						{
+							"Set": ["EventId(Action-End, [t], Speak([cs], [ns], Lawyer, [style]), SELF) = [id]"]
+						}
+				}, 
+				{
+					"RuleName": "Anderson was separated from wife",
+					"Target": "[t]",
+					"Value": 5,
+					"Conditions":
+						{
+							"Set": ["EventId(Action-End, [t], Speak([cs], [ns], Separated, [style]), SELF) = [id]"]
+						}
+				}, 
+				{
+					"RuleName": "Anderson lied",
+					"Target": "[t]",
+					"Value": -10,
+					"Conditions":
+						{
+							"Set": ["EventId(Action-End, [t], Speak([cs], [ns], Lie, [style]), SELF) = [id]"]
+						}
+				}, 
+				{
+					"RuleName": "Anderson admitted being home",
+					"Target": "[t]",
+					"Value": 5,
+					"Conditions":
+						{
+							"Set": ["EventId(Action-End, [t], Speak([cs], [ns], Home, [style]), SELF) = [id]"]
+						}
+				}, 
+				{
+					"RuleName": "Anderson and his wife had reconciled",
+					"Target": "[t]",
+					"Value": 5,
+					"Conditions":
+						{
+							"Set": ["EventId(Action-End, [t], Speak([cs], [ns], Reconcile, [style]), SELF) = [id]"]
+						}
+				}]
+		},
+	"types": [
+		{
+			"TypeId": 0,
+			"ClassName": "SocialImportance.SocialImportanceAsset, SocialImportance, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null"
+		}]
+},
+"CommeillFautAsset", 
+{
+	"root":
+		{
+			"classId": 0,
+			"SocialExchanges": []
+		},
+	"types": [
+		{
+			"TypeId": 0,
+			"ClassName": "CommeillFaut.CommeillFautAsset, CommeillFaut, Version=1.7.0.0, Culture=neutral, PublicKeyToken=null"
+		}]
+}
+]

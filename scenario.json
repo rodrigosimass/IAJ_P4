@@ -1,0 +1,814 @@
+{
+	"root":
+		{
+			"classId": 0,
+			"ScenarioName": "Cops",
+			"Description": "Somehow you ended up in a jail cell and are being interrogated by the police. It is up to you to navigate through the interrogation successfully and get your freedom back. Be careful with what you say and what you do.",
+			"Dialogues": [
+				{
+					"CurrentState": "PreQuestions",
+					"NextState": "QuestionS",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Sure.",
+					"UtteranceId": "TTS-5AE5A2B02D0661A4A476BEB56A21003F"
+				}, 
+				{
+					"CurrentState": "Deliberation",
+					"NextState": "PassDecision",
+					"Meaning": "Inject(AgentBenson)",
+					"Style": "Neutral",
+					"Utterance": "I will let my colleague decide.",
+					"UtteranceId": "TTS-1AE3EF1E4B3B79E0831A9C5252E340B5"
+				}, 
+				{
+					"CurrentState": "AnswerA",
+					"NextState": "Home",
+					"Meaning": "-",
+					"Style": "Polite",
+					"Utterance": "I was at the apartment.",
+					"UtteranceId": "TTS-E5CA230CAC500CA350A4AC5FAFA1EA67"
+				}, 
+				{
+					"CurrentState": "Lawyer",
+					"NextState": "End",
+					"Meaning": "-",
+					"Style": "Negative",
+					"Utterance": "(YOU LOST) Fine!",
+					"UtteranceId": "TTS-12F81653A8B24B5024F42A2362D86369"
+				}, 
+				{
+					"CurrentState": "HomeResponse",
+					"NextState": "Deliberation",
+					"Meaning": "-",
+					"Style": "Dismissive",
+					"Utterance": "I guess so.",
+					"UtteranceId": "TTS-51BF4D5AF080D55AB2D2DB526A770120"
+				}, 
+				{
+					"CurrentState": "DocumentSigned",
+					"NextState": "PreQuestions",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Ok, Mr. Anderson. Now we have a couple questions for you. Is that ok?",
+					"UtteranceId": "TTS-4027EC6527EE90166AB86E06A09D679D"
+				}, 
+				{
+					"CurrentState": "DocumentLoss",
+					"NextState": "End",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "(YOU LOST) Your choise",
+					"UtteranceId": "TTS-FC821D5DE1A6DEEC13BC3242BAF194EB"
+				}, 
+				{
+					"CurrentState": "DocumentSigning",
+					"NextState": "DocumentSigned",
+					"Meaning": "Right",
+					"Style": "Polite",
+					"Utterance": "Ok. Pass me the document. (sign right handed)",
+					"UtteranceId": "TTS-162365A097C1C765E5DAFA4B124B7B68"
+				}, 
+				{
+					"CurrentState": "Where",
+					"NextState": "BadWhere",
+					"Meaning": "Inject(AgentSmith)",
+					"Style": "Rude",
+					"Utterance": "But I did nothing wrong! Why am I at the police station?",
+					"UtteranceId": "TTS-2614E4FA3A11FA342E2D7FBDC9D2DB16"
+				}, 
+				{
+					"CurrentState": "NotSignedConfirmation",
+					"NextState": "DocumentSigned",
+					"Meaning": "Right",
+					"Style": "Neutral",
+					"Utterance": "Give it here... (sign right handed)",
+					"UtteranceId": "TTS-BAB42FC85881BF4BAB9B7621DC0D4701"
+				}, 
+				{
+					"CurrentState": "NotSigned",
+					"NextState": "NotSignedConfirmation",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Mr. Anderson, are you sure you don't want to sign it? We won't be able to use any defense you might have given here if you don't sign the document.",
+					"UtteranceId": "TTS-6EAC15E9C2A83C24F46E9A3D419388A0"
+				}, 
+				{
+					"CurrentState": "WifeFate",
+					"NextState": "WifeConfirmationGood",
+					"Meaning": "Inject(AgentBenson)",
+					"Style": "Neutral",
+					"Utterance": "What...?",
+					"UtteranceId": "TTS-4F17CAF36B5C61D9BBAFBCC64DC61155"
+				}, 
+				{
+					"CurrentState": "PreQuestions",
+					"NextState": "QuestionS",
+					"Meaning": "-",
+					"Style": "Dismissive",
+					"Utterance": "I guess...",
+					"UtteranceId": "TTS-EC3615FC6FE037DEB8978DF7263CB1B6"
+				}, 
+				{
+					"CurrentState": "WifeConfirmationBad",
+					"NextState": "WifeConfirmationResponse",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Your wife was the victim of a brutal murder. That's what we mean.",
+					"UtteranceId": "TTS-9E206DED92B6AD0E9EF94EF9481A389A"
+				}, 
+				{
+					"CurrentState": "AnswerS",
+					"NextState": "QuestionM",
+					"Meaning": "-",
+					"Style": "Rude",
+					"Utterance": "And?!",
+					"UtteranceId": "TTS-62B107DCF9E7ECD37FC906573295B1FE"
+				}, 
+				{
+					"CurrentState": "WifeConfirmationGood",
+					"NextState": "WifeConfirmationResponse",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Unfortunately, it is true.",
+					"UtteranceId": "TTS-C078A91C7C3B97157C63C7B4DF415B30"
+				}, 
+				{
+					"CurrentState": "Signing",
+					"NextState": "DocumentSigning",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Mr. Anderson, before we continue we need you to sign this document. It states that you are, indeed, who you say you are. It is merely a formality, though, as we know who you are already.",
+					"UtteranceId": "TTS-CCF761BA30EEC360E4CB9DD6E8D80D6D"
+				}, 
+				{
+					"CurrentState": "NotSignedConfirmation",
+					"NextState": "DocumentLoss",
+					"Meaning": "-",
+					"Style": "Rude",
+					"Utterance": "I ain't signing shit!",
+					"UtteranceId": "TTS-7E48AB92A0ACBD175C9FCE83D4A68DD2"
+				}, 
+				{
+					"CurrentState": "DocumentSigning",
+					"NextState": "NotSigned",
+					"Meaning": "-",
+					"Style": "Rude",
+					"Utterance": "Screw you! I'm not signing anything.",
+					"UtteranceId": "TTS-FB26F153D7BA6FDCBEACF5C1046793ED"
+				}, 
+				{
+					"CurrentState": "AnswerM",
+					"NextState": "MarriageBad",
+					"Meaning": "-",
+					"Style": "Dismissive",
+					"Utterance": "What about it?",
+					"UtteranceId": "TTS-416F4452D29E2842D0844C536A8C31AD"
+				}, 
+				{
+					"CurrentState": "BadCop1",
+					"NextState": "GoodCop1",
+					"Meaning": "ChangeSpeaker(AgentBenson)",
+					"Style": "Neutral",
+					"Utterance": "Now, now, Mr. Anderson. You know damn well where you are.",
+					"UtteranceId": "TTS-F0E8A344A703BEA6FDB21EBF34B817FF"
+				}, 
+				{
+					"CurrentState": "CalmDown",
+					"NextState": "BadWhere2",
+					"Meaning": "ChangeTarget(Anderson)",
+					"Style": "Neutral",
+					"Utterance": "Calm down. You are a professional.",
+					"UtteranceId": "TTS-1BDA11C14146D3F29736F5950C764B26"
+				}, 
+				{
+					"CurrentState": "GoodWhere",
+					"NextState": "WifeFate",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Mr. Anderson, I am sorry to say that your wife was found murdered in your apartment earlier this morning. My condolences.",
+					"UtteranceId": "TTS-EA24B364C48A150EC1D4135840BA661A"
+				}, 
+				{
+					"CurrentState": "GoodCop1",
+					"NextState": "Where",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Good evening, Mr. Anderson. We are the police. You are in a police station. We would like to ask you a couple questions.",
+					"UtteranceId": "TTS-85147012078F24BD11F5E5B836AD9EE6"
+				}, 
+				{
+					"CurrentState": "NotSignedConfirmation",
+					"NextState": "DocumentSigned",
+					"Meaning": "Left",
+					"Style": "Neutral",
+					"Utterance": "Alright, fine. I'll sign the paper. (sign left handed)",
+					"UtteranceId": "TTS-D8F28BD7BC7E3E8C0BEF9C0BC412C249"
+				}, 
+				{
+					"CurrentState": "BadWhere2",
+					"NextState": "WifeFate",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "You murdered your wife in cold blood. That is why you are here",
+					"UtteranceId": "TTS-C681A45FD1AAFB95DA1C24A2E6A60A45"
+				}, 
+				{
+					"CurrentState": "Where",
+					"NextState": "GoodWhere",
+					"Meaning": "-",
+					"Style": "Polite",
+					"Utterance": "The police station? Why am I here?",
+					"UtteranceId": "TTS-2CE2B2A85D3F7E1A01799C243A36C7A7"
+				}, 
+				{
+					"CurrentState": "Start",
+					"NextState": "BadCop1",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Where am I?!",
+					"UtteranceId": "TTS-811CD6B89BAE5160A62EA3525B47B068"
+				}, 
+				{
+					"CurrentState": "LawyerConfirm",
+					"NextState": "End",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "(YOU LOST) Yes, I am sure.",
+					"UtteranceId": "TTS-B4CCE20889E42C319946D93FF7CFB0BF"
+				}, 
+				{
+					"CurrentState": "DocumentSigning",
+					"NextState": "DocumentSigned",
+					"Meaning": "Left",
+					"Style": "Polite",
+					"Utterance": "Sure. I'll sign it. (sign left handed)",
+					"UtteranceId": "TTS-83267A215E4307AD87F16125AE15F470"
+				}, 
+				{
+					"CurrentState": "Lawyer",
+					"NextState": "LawyerConfirm",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Mr. Anderson, if you want a lawyer you will start a very lengthy process. Are you sure?",
+					"UtteranceId": "TTS-661C3B18028D63DF3531E5C44662DFEA"
+				}, 
+				{
+					"CurrentState": "Lawyer",
+					"NextState": "LawyerConfirm",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Are you sure you want a lawyer?",
+					"UtteranceId": "TTS-9DDF5065437EEF98D9E17AE23F271D23"
+				}, 
+				{
+					"CurrentState": "PreQuestions",
+					"NextState": "Lawyer",
+					"Meaning": "-",
+					"Style": "Dismissive",
+					"Utterance": "I will not answer any questions without a lawyer present.",
+					"UtteranceId": "TTS-986C3934B6340D2FEFAA315868DCBE68"
+				}, 
+				{
+					"CurrentState": "AnswerM",
+					"NextState": "MarriageGood",
+					"Meaning": "-",
+					"Style": "Dismissive",
+					"Utterance": "You got your information wrong. We were happily married.",
+					"UtteranceId": "TTS-FFC1FB4EF73B50C0F5D0A6EC7D4D7D12"
+				}, 
+				{
+					"CurrentState": "LawyerConfirm",
+					"NextState": "QuestionS",
+					"Meaning": "Lawyer",
+					"Style": "Neutral",
+					"Utterance": "No...I will answer the questions.",
+					"UtteranceId": "TTS-3256FC2D61353D3C62523656D7801263"
+				}, 
+				{
+					"CurrentState": "QuestionS",
+					"NextState": "AnswerS",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "The body of the victim was found in your apartment, correct? The one you both live in?",
+					"UtteranceId": "TTS-EA4164BDC81698684CCF968D2E4C4383"
+				}, 
+				{
+					"CurrentState": "QuestionM",
+					"NextState": "AnswerM",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Our reports indicated that you were separated. Were you getting a divorce?",
+					"UtteranceId": "TTS-05220934884902ECBEDA6F28BB8B7B9E"
+				}, 
+				{
+					"CurrentState": "WifeFate",
+					"NextState": "WifeConfirmationBad",
+					"Meaning": "Inject(AgentSmith)",
+					"Style": "Rude",
+					"Utterance": "The fuck you mean she's dead?",
+					"UtteranceId": "TTS-462A825DCFD01C595A0A87356EFF9B89"
+				}, 
+				{
+					"CurrentState": "MarriageGoodResponse",
+					"NextState": "QuestionA",
+					"Meaning": "Lie",
+					"Style": "Dismissive",
+					"Utterance": "Totally fake.",
+					"UtteranceId": "TTS-9B782DBA09851E6298BE6AFFBF72D079"
+				}, 
+				{
+					"CurrentState": "AnswerS",
+					"NextState": "QuestionM",
+					"Meaning": "Separated",
+					"Style": "Neutral",
+					"Utterance": "We did not live together.",
+					"UtteranceId": "TTS-E843A5CD3BCAC5004F446B4A3001AA15"
+				}, 
+				{
+					"CurrentState": "MarriageGood",
+					"NextState": "MarriageGoodResponse",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "So you are telling us that these divorce papers, signed by both of you, are somehow fake?",
+					"UtteranceId": "TTS-2B79BD035BA8A53D26CE38633BBAA4E1"
+				}, 
+				{
+					"CurrentState": "MarriageGoodResponse",
+					"NextState": "QuestionA",
+					"Meaning": "Lie",
+					"Style": "Neutral",
+					"Utterance": "No...",
+					"UtteranceId": "TTS-76EFB34FC9BA7F43F2CFAD94BCEAB637"
+				}, 
+				{
+					"CurrentState": "MarriageBad",
+					"NextState": "MarriageBadResponse",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Marital problems have been the source of a myriad of murders.",
+					"UtteranceId": "TTS-1C765C9FB0AE686510617E13B0A124A1"
+				}, 
+				{
+					"CurrentState": "MarriageGoodResponse",
+					"NextState": "MarriageLawyer",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "I want my lawyer now.",
+					"UtteranceId": "TTS-0CE2F372B17AFC12806F46ECB819CCB3"
+				}, 
+				{
+					"CurrentState": "MarriageLawyer",
+					"NextState": "End",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "(YOU LOST) Oh you will need one. Count on it.",
+					"UtteranceId": "TTS-DD5FE0930DB999718A6FA2AADDFDEE18"
+				}, 
+				{
+					"CurrentState": "Deliberation",
+					"NextState": "Release",
+					"Meaning": "Decision",
+					"Style": "Neutral",
+					"Utterance": "(YOU WIN) I believe you are innocent. You are free to go.",
+					"UtteranceId": "TTS-BE668C7EEA84EAF7D816E179588FDA62"
+				}, 
+				{
+					"CurrentState": "AnswerA",
+					"NextState": "Deliberation",
+					"Meaning": "-",
+					"Style": "Dismissive",
+					"Utterance": "Don't know.",
+					"UtteranceId": "TTS-AA1B0E8DCDE597F7FC7A3A48B72F35EE"
+				}, 
+				{
+					"CurrentState": "MarriageBadResponse",
+					"NextState": "QuestionA",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "True, but I did not kill my wife.",
+					"UtteranceId": "TTS-FA2DC6589B7A3ECA83E0D961FC4D73FF"
+				}, 
+				{
+					"CurrentState": "QuestionA",
+					"NextState": "AnswerA",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Let us get down to business. Where were you last night?",
+					"UtteranceId": "TTS-84CBBF897C705BF7865D896EA74398DF"
+				}, 
+				{
+					"CurrentState": "AnswerA",
+					"NextState": "Deliberation",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "I do not remember.",
+					"UtteranceId": "TTS-D56381D6CFB640E6E3A6B28196DFE039"
+				}, 
+				{
+					"CurrentState": "AnswerM",
+					"NextState": "QuestionA",
+					"Meaning": "Reconcile",
+					"Style": "Polite",
+					"Utterance": "We hit a rough patch, yes. But we were back in counseling.",
+					"UtteranceId": "TTS-2C336D9AC2E322603AC74C62BF269937"
+				}, 
+				{
+					"CurrentState": "Home",
+					"NextState": "HomeResponse",
+					"Meaning": "Home",
+					"Style": "Neutral",
+					"Utterance": "The one where the victim was found?",
+					"UtteranceId": "TTS-F1DA812C432C91C8D54370FD52A25743"
+				}, 
+				{
+					"CurrentState": "HomeResponse",
+					"NextState": "Deliberation",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "I know what it sounds like. We were having dinner together.",
+					"UtteranceId": "TTS-D8EF3E6303D9DA47E84C5A10E34F1AE5"
+				}, 
+				{
+					"CurrentState": "WifeConfirmationResponse",
+					"NextState": "Signing",
+					"Meaning": "Inject(AgentSmith)",
+					"Style": "Neutral",
+					"Utterance": "And I am a suspect?",
+					"UtteranceId": "TTS-F474BECA690AB88C87B16D93B7F95546"
+				}, 
+				{
+					"CurrentState": "AnswerS",
+					"NextState": "QuestionM",
+					"Meaning": "-",
+					"Style": "Dismissive",
+					"Utterance": "I mean...You could say that, yes.",
+					"UtteranceId": "TTS-7B20FBD11F2A1A0E0E89B5433EB61288"
+				}, 
+				{
+					"CurrentState": "BadWhere",
+					"NextState": "CalmDown",
+					"Meaning": "Inject(AgentBenson)",
+					"Style": "Neutral",
+					"Utterance": "You call that nothing wrong? You butchered here. Murdered here. ",
+					"UtteranceId": "TTS-38BF561467F63214DC80C711289BB9E1"
+				}, 
+				{
+					"CurrentState": "PreQuestions",
+					"NextState": "QuestionS",
+					"Meaning": "-",
+					"Style": "Polite",
+					"Utterance": "Yes, Sir.",
+					"UtteranceId": "TTS-0EF30F4941BDCB9F17F5229C447304C8"
+				}, 
+				{
+					"CurrentState": "DocumentSigning",
+					"NextState": "NotSigned",
+					"Meaning": "-",
+					"Style": "Dismissive",
+					"Utterance": "I do not want to sign the documents.",
+					"UtteranceId": "TTS-9E7EAD706A74C56A0A62C556F5F40ADE"
+				}, 
+				{
+					"CurrentState": "PreQuestions",
+					"NextState": "QuestionS",
+					"Meaning": "-",
+					"Style": "Rude",
+					"Utterance": "Let's get this over with!",
+					"UtteranceId": "TTS-3F6ACF716C45474B3671C6486A6B4D08"
+				}, 
+				{
+					"CurrentState": "NotSignedConfirmation",
+					"NextState": "DocumentLoss",
+					"Meaning": "-",
+					"Style": "Dismissive",
+					"Utterance": "I refuse to sign anything without my lawyer present.",
+					"UtteranceId": "TTS-2895557282BE8E8A8267E2CFABED1509"
+				}, 
+				{
+					"CurrentState": "AnswerS",
+					"NextState": "QuestionM",
+					"Meaning": "Separated",
+					"Style": "Polite",
+					"Utterance": "It is complicated. We were not living together at the time.",
+					"UtteranceId": "TTS-CCCBFEF97B8EB972FE7293554A46BC2A"
+				}, 
+				{
+					"CurrentState": "Where",
+					"NextState": "GoodWhere",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "But why am I here?",
+					"UtteranceId": "TTS-BC4977A6C45315DACAD86D471E1C03AB"
+				}, 
+				{
+					"CurrentState": "Where",
+					"NextState": "GoodWhere",
+					"Meaning": "-",
+					"Style": "Rude",
+					"Utterance": "On what charge?",
+					"UtteranceId": "TTS-2BFC7E82A0818C2E3697737B4A504078"
+				}, 
+				{
+					"CurrentState": "WifeFate",
+					"NextState": "WifeConfirmationGood",
+					"Meaning": "Inject(AgentBenson)",
+					"Style": "Dismissive",
+					"Utterance": "Huh...?",
+					"UtteranceId": "TTS-C43F89AE450F1B3196405D5CB7CAE57F"
+				}, 
+				{
+					"CurrentState": "WifeConfirmationResponse",
+					"NextState": "Signing",
+					"Meaning": "Inject(AgentSmith)",
+					"Style": "Rude",
+					"Utterance": "And what does that have to do with me?",
+					"UtteranceId": "TTS-73DA3ED5FEFA3E228AD96DE2D15CF434"
+				}, 
+				{
+					"CurrentState": "AnswerM",
+					"NextState": "QuestionA",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Yes, we were.",
+					"UtteranceId": "TTS-DE6B6061A3B83B24FF1950D10B6A26AB"
+				}],
+			"Characters": [
+				{
+					"KnowledgeBase":
+						{
+							"Perspective": "AgentSmith",
+							"Knowledge":
+								{
+									"SELF":
+										{
+											"Has(Floor)": "Anderson, 1"
+										}
+								}
+						},
+					"BodyName": "Male",
+					"VoiceName": "Male",
+					"EmotionalState":
+						{
+							"Mood": 0,
+							"initialTick": 0,
+							"EmotionalPool": [],
+							"AppraisalConfiguration":
+								{
+									"HalfLifeDecayConstant": 0.5,
+									"EmotionInfluenceOnMoodFactor": 0.3,
+									"MoodInfluenceOnEmotionFactor": 0.3,
+									"MinimumMoodValueForInfluencingEmotions": 0.5,
+									"EmotionalHalfLifeDecayTime": 15,
+									"MoodHalfLifeDecayTime": 60
+								}
+						},
+					"AutobiographicMemory":
+						{
+							"Tick": 0,
+							"records": []
+						},
+					"OtherAgents":
+						{
+							"dictionary": []
+						},
+					"Goals": []
+				}, 
+				{
+					"KnowledgeBase":
+						{
+							"Perspective": "Anderson",
+							"Knowledge":
+								{
+									"SELF":
+										{
+											"DialogueState(AgentSmith)": "Start, 1",
+											"Has(Floor)": "Anderson, 1"
+										}
+								}
+						},
+					"BodyName": "Male",
+					"VoiceName": "Male",
+					"EmotionalState":
+						{
+							"Mood": 0,
+							"initialTick": 0,
+							"EmotionalPool": [],
+							"AppraisalConfiguration":
+								{
+									"HalfLifeDecayConstant": 0.5,
+									"EmotionInfluenceOnMoodFactor": 0.3,
+									"MoodInfluenceOnEmotionFactor": 0.3,
+									"MinimumMoodValueForInfluencingEmotions": 0.5,
+									"EmotionalHalfLifeDecayTime": 15,
+									"MoodHalfLifeDecayTime": 60
+								}
+						},
+					"AutobiographicMemory":
+						{
+							"Tick": 0,
+							"records": []
+						},
+					"OtherAgents":
+						{
+							"dictionary": []
+						},
+					"Goals": []
+				}, 
+				{
+					"KnowledgeBase":
+						{
+							"Perspective": "AgentBenson",
+							"Knowledge":
+								{
+									"SELF":
+										{
+											"Has(Floor)": "Anderson, 1"
+										}
+								}
+						},
+					"BodyName": "Female",
+					"VoiceName": "Female",
+					"EmotionalState":
+						{
+							"Mood": 0,
+							"initialTick": 0,
+							"EmotionalPool": [],
+							"AppraisalConfiguration":
+								{
+									"HalfLifeDecayConstant": 0.5,
+									"EmotionInfluenceOnMoodFactor": 0.3,
+									"MoodInfluenceOnEmotionFactor": 0.3,
+									"MinimumMoodValueForInfluencingEmotions": 0.5,
+									"EmotionalHalfLifeDecayTime": 15,
+									"MoodHalfLifeDecayTime": 60
+								}
+						},
+					"AutobiographicMemory":
+						{
+							"Tick": 0,
+							"records": []
+						},
+					"OtherAgents":
+						{
+							"dictionary": []
+						},
+					"Goals": []
+				}],
+			"WorldModel":
+				{
+					"Effects":
+						{
+							"dictionary": [
+								{
+									"key": "Event(Action-End, [s], Speak([cs], [ns], *, *), [t])",
+									"value": [
+										{
+											"PropertyName": "DialogueState([s])",
+											"NewValue": "[ns]",
+											"ObserverAgent": "[t]"
+										}, 
+										{
+											"PropertyName": "Has(Floor)",
+											"NewValue": "[t]",
+											"ObserverAgent": "*"
+										}, 
+										{
+											"PropertyName": "DialogueState([t])",
+											"NewValue": "[ns]",
+											"ObserverAgent": "[s]"
+										}]
+								}, 
+								{
+									"key": "Event(Action-End, [s], Speak([cs], [ns], ChangeTarget([nt]), *), [t])",
+									"value": [
+										{
+											"PropertyName": "DialogueState([nt])",
+											"NewValue": "[ns]",
+											"ObserverAgent": "[t]"
+										}, 
+										{
+											"PropertyName": "DialogueState([t])",
+											"NewValue": "-",
+											"ObserverAgent": "[s]"
+										}, 
+										{
+											"PropertyName": "Has(Floor)",
+											"NewValue": "[t]",
+											"ObserverAgent": "*"
+										}, 
+										{
+											"PropertyName": "DialogueState([s])",
+											"NewValue": "-",
+											"ObserverAgent": "[t]"
+										}]
+								}, 
+								{
+									"key": "Event(Action-End, [s], Speak([cs], [ns], ChangeSpeaker([nt]), *), [t])",
+									"value": [
+										{
+											"PropertyName": "DialogueState([s])",
+											"NewValue": "-",
+											"ObserverAgent": "[t]"
+										}, 
+										{
+											"PropertyName": "Has(Floor)",
+											"NewValue": "[nt]",
+											"ObserverAgent": "*"
+										}, 
+										{
+											"PropertyName": "DialogueState([t])",
+											"NewValue": "-",
+											"ObserverAgent": "[s]"
+										}, 
+										{
+											"PropertyName": "DialogueState([t])",
+											"NewValue": "[ns]",
+											"ObserverAgent": "[nt]"
+										}]
+								}, 
+								{
+									"key": "Event(Action-End, [s], Speak([cs], [ns], Inject([nt]), *), [t])",
+									"value": [
+										{
+											"PropertyName": "Has(Floor)",
+											"NewValue": "[nt]",
+											"ObserverAgent": "*"
+										}, 
+										{
+											"PropertyName": "DialogueState([s])",
+											"NewValue": "-",
+											"ObserverAgent": "[t]"
+										}, 
+										{
+											"PropertyName": "DialogueState([s])",
+											"NewValue": "[ns]",
+											"ObserverAgent": "[nt]"
+										}, 
+										{
+											"PropertyName": "DialogueState([t])",
+											"NewValue": "-",
+											"ObserverAgent": "[s]"
+										}]
+								}]
+						},
+					"Priorities":
+						{
+							"dictionary": [
+								{
+									"key": "Event(Action-End, [s], Speak([cs], [ns], *, *), [t])",
+									"value": 1
+								}, 
+								{
+									"key": "Event(Action-End, [s], DuplicateSpeak([cs], [ns], *, *), [t])",
+									"value": 1
+								}, 
+								{
+									"key": "Event(Action-End, [s], Speak([cs], [ns], ChangeTarget([nt]), *), [t])",
+									"value": 2
+								}, 
+								{
+									"key": "Event(Action-End, [s], DuplicateSpeak([cs], [ns], ChangeTarget([nt]), *), [t])",
+									"value": 1
+								}, 
+								{
+									"key": "Event(Action-End, [s], Speak([cs], [ns], ChangeSpeaker([nt]), *), [t])",
+									"value": 3
+								}, 
+								{
+									"key": "Event(Action-End, [s], Speak([cs], [ns], -, *), [t])",
+									"value": 1
+								}, 
+								{
+									"key": "Event(Action-End, [s], Speak([cs], [ns], Coiso([nt]), *), [t])",
+									"value": 4
+								}, 
+								{
+									"key": "Event(Action-End, [s], Speak([cs], [ns], -, -), [t])",
+									"value": 1
+								}, 
+								{
+									"key": "Event(Action-End, [s], Speak([cs], [ns], Interject([nt]), *), [t])",
+									"value": 4
+								}, 
+								{
+									"key": "Event(Action-End, [s], DuplicateSpeak([cs], [ns], -, *), [t])",
+									"value": 1
+								}, 
+								{
+									"key": "Event(Action-End, [s], DuplicateSpeak([cs], [ns], Right, *), [t])",
+									"value": 1
+								}, 
+								{
+									"key": "Event(Action-End, [s], Speak([cs], [ns], Inject([nt]), *), [t])",
+									"value": 4
+								}]
+						}
+				}
+		},
+	"types": [
+		{
+			"TypeId": 0,
+			"ClassName": "IntegratedAuthoringTool.IntegratedAuthoringToolAsset, IntegratedAuthoringTool, Version=1.7.0.0, Culture=neutral, PublicKeyToken=null"
+		}]
+}
